@@ -20,6 +20,7 @@ function helloName( name ) {
 }
 // Remember to call the function to test
 helloName('Brandon');
+
 console.log('Testing helloName function:', helloName('Jake'));
 
 // 3. Function to add two numbers together & return the result
@@ -63,7 +64,7 @@ isPositive(5);
 isPositive(-10);
 
 console.log('Testing isPositive: 5 is argument and should be true', isPositive(5));
-console.log('Testing isPositive: -10 is argument and should be false', isPositive(10));
+console.log('Testing isPositive: -10 is argument and should be false', isPositive(-10));
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
@@ -81,19 +82,17 @@ console.log('Testing getLast function: Should say undefined', getLast([]));
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 
 function find( value, array ) {
-  for (let i = 0; i < array.length, i++) {
-    if (value === array[i]) {
-      return true;
+  for ( arrayItem of array) {
+    if ( arrayItem === value)
+    return true;
     }
-    else {
-      return false;
-    }
+    return false;
   }
-} //end function
 
-
-console.log('Testing true', find( 1, [2, 77, 1, 3, 4, 5] ));
-console.log('Testing False', find( 5, [1, 6, 7, 8, 4, 2, 11] ));
+console.log('Testing True: Value is 5 and array contains 5', find(5, [1, 2, 3, 4, 5]));
+console.log('Testing False: Value is 8 and array has no 8', find(8, [66, 3, 22, 1, 99]));
+console.log('Testing True with string: find a dog in array?', find('dog', ['cat', 'bird', 'dog', 'fish']));
+console.log('Testing False with string: find monkey in array?', find('monkey', ['cat', 'bird', 'dog', 'fish']));
 
 // ----------------------
 // Stretch Goals
