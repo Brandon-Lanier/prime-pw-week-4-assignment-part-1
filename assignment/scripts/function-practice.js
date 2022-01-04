@@ -100,17 +100,31 @@ console.log('Testing False with string: find monkey in array?', find('monkey', [
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (string.charAt(0) === letter) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+console.log( 'isFirstLetter - should say false', isFirstLetter('f', 'brandon') );
+console.log( 'isFirstLetter - should say true', isFirstLetter('q', 'queso') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll( numbers ) {
   let sum = 0
   // TODO: loop to add items
+  for (let i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
   return sum;
 }
+
+let testDigits = [5, 5, 5, 10];
+console.log(`Testing by putting a pre-defined array in: ${sumAll(testDigits)}`);
+console.log(`Testing by adding individual numbers into the function: ${sumAll([1, 2, 3, 4])}`);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
