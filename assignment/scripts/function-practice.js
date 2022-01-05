@@ -14,13 +14,14 @@ console.log('Test - should say "Hello World!"', hello());
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
-function helloName( name ) {
-  console.log('Hello,', name);
-  return name;
+function helloName(name) {
+  return `Hello, ${name}`;
 }
 // Remember to call the function to test
+
 helloName('Brandon');
 
+console.log(`Testing with my name, ${helloName('Brandon')}`);
 console.log('Testing helloName function:', helloName('Jake'));
 
 // 3. Function to add two numbers together & return the result
@@ -124,13 +125,26 @@ function sumAll( numbers ) {
 
 let testDigits = [5, 5, 5, 10];
 console.log(`Testing by putting a pre-defined array in: ${sumAll(testDigits)}`);
-console.log(`Testing by adding individual numbers into the function: ${sumAll([1, 2, 3, 4])}`);
+console.log(`Testing by adding array numbers directly into the function argument: ${sumAll([1, 2, 3, 4])}`);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+let inputArray = [11, 4, -3, -10, -19, 6, -14, 51];
 
+function newArray(input) {
+  let posArray = [];
+  for (let number of input) {
+    if (number > 0) {
+      posArray.push(number);
+    }
+  }
+  return posArray;
+}
+
+console.log(`This is the input array: ${inputArray}`);
+console.log(`This is the new array after running the function ${newArray(inputArray)}`);
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
