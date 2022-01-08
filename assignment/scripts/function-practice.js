@@ -134,7 +134,7 @@ function sumAll(numbers) {
 let testDigits = [5, 5, 5, 10];
 
 console.log(`Testing by putting a pre-defined array in (Should be 25): ${sumAll(testDigits)}`);
-console.log(`Testing by adding array numbers directly into the function argumen (Should be 10): ${sumAll([1, 2, 3, 4])}`);
+console.log(`Testing by adding array numbers directly into the function argument (Should be 10): ${sumAll([1, 2, 3, 4])}`);
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -159,10 +159,10 @@ console.log(`This is the new array after calling the function ${newArray(inputAr
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
 
-// I did one of the medium tests called "Tile Teamwork Tactics".
+// I did one of the medium tests called "Tile Teamwork Tactics" on Edabit.
 // The object is to see if your dice (represented by 'a') can reach your partners number (represented by 'b').
 // You have one more roll to reach your partners number, so the object is to see if it is possible with a 6 sided dice.  Your partner does not get another roll.
-
+// Partner (b) does not get a second roll.
 
 function possibleBonus(a, b) {
 	let diff = Math.abs(a - b); // I had to look up how to easily calculate the difference between two numbers for this.
@@ -173,3 +173,8 @@ function possibleBonus(a, b) {
 		return false; // false if b is too many numbers away or you are already greater than your partner.
 	}
 }
+
+console.log(`Testing if possible when my number is 5 and other number is 7 (should be true): ${possibleBonus(5, 7)}`);
+console.log(`Testing if possible when my number is 8 and other number is 3 (should be false): ${possibleBonus(8, 3)}`);
+console.log(`Testing if possible when my number is 1 and other number is 8 (should be false): ${possibleBonus(1, 8)}`);
+console.log(`Testing if possible when my number is 1 and other number is 6 (should be true): ${possibleBonus(1, 6)}`);
